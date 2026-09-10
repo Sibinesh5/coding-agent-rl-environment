@@ -15,8 +15,6 @@ I performed five independent runs for each model. A new chat and a fresh reposit
 | Model A | GPT-5.6 Sol | ChatGPT web | 5 | 0 | 0 |
 | Model B | Gemini 3.1 Pro | Gemini web | 5 | 0 | 1 |
 
-Replace `Gemini 3.1 Pro` with the exact model name displayed in Gemini.
-
 ## Quantitative Results
 
 The raw results are stored in `analysis/eval_runs.csv`.

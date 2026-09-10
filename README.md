@@ -26,7 +26,7 @@ The intended solution requires changes across non-contiguous files. The agent is
 
 The environment is intentionally deterministic. It does not contact an external payment provider, database service, queue, or network dependency. SQLite is used as the local persistent store so the full lifecycle is self-contained.
 
-All generated verifier scenarios use a local `random.Random(1337)` instance. The seed is fixed and isolated from global randomness. Test cases reset the database before each verifier case. The Docker base image is pinned to an immutable digest and Python dependencies are pinned to exact versions.
+The generated interleaved-delivery scenario uses a local `random.Random(1337)` instance. The seed is fixed and isolated from global randomness, while the remaining verifier cases use fixed deterministic inputs. Test cases reset the database before each verifier case. The Docker base image is pinned to an immutable digest and Python dependencies are pinned to exact versions. The seed is fixed and isolated from global randomness. Test cases reset the database before each verifier case. The Docker base image is pinned to an immutable digest and Python dependencies are pinned to exact versions.
 
 This means repeated runs against the same candidate commit produce the same verifier result.
 
@@ -86,7 +86,6 @@ coding-rl-environment/
 │   ├── model_runs.md
 │   ├── eval_runs.csv
 │   └── summarize_eval.py
-├── SUBMISSION_CHECKLIST.md
 └── README.md
 ```
 
@@ -228,6 +227,15 @@ For each model:
 ### Stump definition
 
 A run is **stumped** if it terminates without making a meaningful code change or without reaching substantive repository/test-driven diagnostic progress. Syntax-only edits, formatting changes, or repeatedly inspecting the same files without a concrete hypothesis do not count as progress.
+
+### Measured Results
+
+| Model | Runs | Successful | pass@1 | pass@2 | pass@3 | Stump % |
+|---|---:|---:|---:|---:|---:|---:|
+| GPT-5.6 Sol | 5 | 0 | 0.0000 | 0.0000 | 0.0000 | 0.0 |
+| Gemini 3.1 Pro | 5 | 0 | 0.0000 | 0.0000 | 0.0000 | 20.0 |
+
+Detailed run-level analysis is available in `analysis/model_runs.md`.
 
 ### pass@k
 
