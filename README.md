@@ -26,7 +26,7 @@ The intended solution requires changes across non-contiguous files. The agent is
 
 The environment is intentionally deterministic. It does not contact an external payment provider, database service, queue, or network dependency. SQLite is used as the local persistent store so the full lifecycle is self-contained.
 
-The generated interleaved-delivery scenario uses a local `random.Random(1337)` instance. The seed is fixed and isolated from global randomness, while the remaining verifier cases use fixed deterministic inputs. Test cases reset the database before each verifier case. The Docker base image is pinned to an immutable digest and Python dependencies are pinned to exact versions. The seed is fixed and isolated from global randomness. Test cases reset the database before each verifier case. The Docker base image is pinned to an immutable digest and Python dependencies are pinned to exact versions.
+The generated interleaved-delivery scenario uses a local `random.Random(1337)` instance. The seed is fixed and isolated from global randomness, while the remaining verifier cases use fixed deterministic inputs. Test cases reset the database before each verifier case. The Docker base image is pinned to an immutable digest and Python dependencies are pinned to exact versions.
 
 This means repeated runs against the same candidate commit produce the same verifier result.
 
