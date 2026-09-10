@@ -1,0 +1,11 @@
+model,run_id,passed,stumped,notes
+Model A,1,false,false,"8/9 tests passed; failed semantic duplicate completion handling"
+Model A,2,false,false,"8/9 tests passed; failed one verifier case"
+Model A,3,false,false,"8/9 tests passed; failed one verifier case"
+Model A,4,false,false,"8/9 tests passed; failed one verifier case"
+Model A,5,false,false,"8/9 tests passed; failed one verifier case"
+Model B,1,false,false,"Application failed to load; generated webhook service removed the expected process_payment_webhook entry point and caused an ImportError"
+Model B,2,false,false,"Application failed to load because generated code introduced a SyntaxError in app/main.py"
+Model B,3,false,false,"Application failed to load because the solution switched SQLAlchemy to aiosqlite without adding the required dependency"
+Model B,4,false,true,"Could not inspect the supplied repository; generated a generic replacement script from assumptions instead of returning a repository-grounded fix"
+Model B,5,false,false,"Application failed to load because app/main.py imports a nonexistent WebhookEvent schema"

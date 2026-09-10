@@ -1,0 +1,28 @@
+name: reliable-payment-webhook-processing
+version: 1.0.0
+difficulty: hard
+category:
+  - repository-level-debugging
+  - api-service-integration
+  - multi-file-implementation
+language: python
+framework: fastapi
+scope: repository
+expected_capabilities:
+  - inspect_existing_code
+  - reason_about_idempotency
+  - reason_about_event_ordering
+  - preserve_api_contracts
+  - design_transaction_boundaries
+  - debug_database_state
+  - run_and_interpret_tests
+required_tool_usage:
+  - shell
+  - code_editor
+  - test_runner
+success_criteria:
+  verifier_command: python /grader/verify.py --target /workspace
+  deterministic: true
+  requires_persistent_state: true
+forbidden_changes:
+  - /grader
