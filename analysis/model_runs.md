@@ -6,7 +6,7 @@ I evaluated the task using two different AI coding models. Each run started from
 
 The model received only the candidate repository and the task instructions. It did not receive the reference solution or verifier implementation. After the model finished, I ran the deterministic verifier against the returned repository without manually repairing the model's changes.
 
-I performed five independent runs for each model. A new chat and a fresh repository copy were used for every run so that previous attempts could not influence later results.
+Five independent runs were performed for each model. Every run used a fresh chat/session and a fresh repository copy so that earlier attempts could not influence later results.
 
 ## Models
 
@@ -17,9 +17,9 @@ I performed five independent runs for each model. A new chat and a fresh reposit
 
 ## Quantitative Results
 
-The raw results are stored in `analysis/eval_runs.csv`.
+The raw evaluation data is stored in `analysis/eval_runs.csv`.
 
-I calculated pass@k using:
+The metrics can be reproduced with:
 
 ```bash
 python analysis/summarize_eval.py analysis/eval_runs.csv
